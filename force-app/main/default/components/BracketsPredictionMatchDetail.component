@@ -1,0 +1,156 @@
+<apex:component>
+    <apex:attribute
+        name="match"
+        description="Match to display"
+        type="Brackets_Match__c"
+        id="match"
+    />
+    <apex:attribute
+        name="home"
+        description="Match to display"
+        type="Brackets_Team__c"
+        id="home"
+    />
+    <apex:attribute
+        name="homePredicted"
+        description="Match to display"
+        type="Brackets_Team__c"
+        id="homePredicted"
+    />
+    <apex:attribute
+        name="visitor"
+        description="Match to display"
+        type="Brackets_Team__c"
+        id="visitor"
+    />
+    <apex:attribute
+        name="visitorPredicted"
+        description="Match to display"
+        type="Brackets_Team__c"
+        id="visitorPredicted"
+    />
+    <apex:attribute
+        name="predicted"
+        description="Match to display"
+        type="Brackets_Team__c"
+        id="predicted"
+    />
+    <apex:attribute
+        name="winner"
+        description="Match to display"
+        type="Brackets_Team__c"
+        id="winner"
+    />
+    <apex:attribute
+        name="scoreHome"
+        description="Score"
+        type="Integer"
+        id="scoreHome"
+    />
+    <apex:attribute
+        name="scoreVisitor"
+        description="Score"
+        type="Integer"
+        id="scoreVisitor"
+    />
+    <div class="matchDetailHTML" id="detail{!match.Id}">
+        <table width="200px" class="MatchDetail">
+            <tr>
+                <td colspan="5" align="center">
+                    <apex:outputText value="{0,date,MM/dd/yyyy hh:mm:ss a}">
+                        <apex:param value="{!match.Schedule__c}" />
+                    </apex:outputText>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5" align="center">
+                    {!match.Brackets_Round__r.Name}
+                </td>
+            </tr>
+            <tr>
+                <td width="55">
+                    <apex:outputPanel
+                        layout="none"
+                        rendered="{!home.Id != null}"
+                        >{!IF(home.ShortName__c != null, home.ShortName__c,
+                        home.Name)}
+                    </apex:outputPanel>
+                    <apex:outputPanel
+                        layout="none"
+                        rendered="{!home.Id == null}"
+                        >{!IF(homePredicted.ShortName__c != null,
+                        homePredicted.ShortName__c, homePredicted.Name)}
+                    </apex:outputPanel>
+                </td>
+                <td width="20" align="right">
+                    <apex:outputpanel
+                        layout="inline"
+                        rendered="{!IF(OR(scoreHome != 0, scoreVisitor != 0), 'true', 'false')}"
+                        >{!CEILING(scoreHome)}</apex:outputpanel
+                    >
+                    <apex:outputpanel
+                        layout="inline"
+                        rendered="{!scoreHome == 0 && scoreVisitor == 0}"
+                        >--</apex:outputpanel
+                    >
+                </td>
+                <td width="10">&nbsp;:&nbsp;</td>
+                <td width="20">
+                    <apex:outputpanel
+                        layout="inline"
+                        rendered="{!scoreHome == 0 && scoreVisitor == 0}"
+                        >--</apex:outputpanel
+                    >
+                    <apex:outputpanel
+                        layout="inline"
+                        rendered="{!IF(OR(scoreHome != 0, scoreVisitor != 0), 'true', 'false')}"
+                        >{!CEILING(scoreVisitor)}</apex:outputpanel
+                    >
+                </td>
+                <td align="right" width="55">
+                    <apex:outputPanel rendered="{!visitor.Id != null}"
+                        >{!IF(visitor.ShortName__c != null,
+                        visitor.ShortName__c, visitor.Name)}</apex:outputPanel
+                    >
+                    <apex:outputPanel rendered="{!visitor.Id == null}"
+                        >{!IF(visitorPredicted.ShortName__c!= null,
+                        visitorPredicted.ShortName__c, visitorPredicted.Name)}
+                    </apex:outputPanel>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="5">
+                    <apex:outputpanel
+                        styleClass="winner"
+                        rendered="{!NOT( ISNULL(winner.Id) )}"
+                    >
+                        <apex:image
+                            url="{!URLFOR($Resource.Brackets ,'images/tick.png')}"
+                            rendered="{!NOT(ISNULL(predicted.Id)) && predicted.Id == winner.Id}"
+                            width="9"
+                            height="9"
+                            title="YOU WIN!"
+                        />
+                        <apex:image
+                            url="{!URLFOR($Resource.Brackets ,'images/cross.png')}"
+                            rendered="{!NOT(ISNULL(predicted.Id)) && predicted.Id != winner.Id }"
+                            width="9"
+                            height="9"
+                            title="YOU LOOSE!"
+                        />
+                        <span
+                            >{!IF(NOT(ISNULL(winner.ShortName__c)),
+                            winner.ShortName__c, winner.Name )}</span
+                        >
+                    </apex:outputpanel>
+                    <apex:outputpanel
+                        styleClass="winner"
+                        rendered="{!!(ISNULL(predicted.Id)) }"
+                    >
+                        Prediction : {!predicted.Name }
+                    </apex:outputpanel>
+                </td>
+            </tr>
+        </table>
+    </div>
+</apex:component>

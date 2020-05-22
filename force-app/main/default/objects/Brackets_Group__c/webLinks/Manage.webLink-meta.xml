@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Manage</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <height>600</height>
+    <linkType>url</linkType>
+    <masterLabel>Manage</masterLabel>
+    <openType>sidebar</openType>
+    <protected>false</protected>
+    <url>/apex/BracketsPredictions?show={!Brackets_Group__c.Id}</url>
+</WebLink>

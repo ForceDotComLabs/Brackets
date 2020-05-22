@@ -1,0 +1,173 @@
+<apex:page
+    id="importTournamentTemplate"
+    controller="BracketsImportTournamentController"
+>
+    <apex:includeScript
+        value="{!URLFOR($Resource.Brackets ,'js/jquery.min.js')}"
+    />
+    <apex:includeScript
+        value="{!URLFOR($Resource.Brackets , '/js/brackets.js') }"
+    />
+    <!-- <apex:includeScript value="{!$Resource.javascripts}" /> -->
+    <apex:stylesheet
+        value="{!URLFOR($Resource.Brackets , '/css/ImportTornament.css') }"
+    />
+    <apex:sectionHeader title="Import Tournamet" subtitle="Import" help="" />
+    <apex:pageBlock title="Imported Tournament List" mode="detail">
+        <apex:form>
+            <apex:pageBlockSection
+                title="Import New Tournament"
+                columns="1"
+                collapsible="false"
+            >
+                <apex:outputPanel layout="block" styleClass="import_section">
+                    <div class="message infoM2">
+                        <span
+                            >Important: You must add the URL to Remote Sites :
+                            <a href="/0rp/e"
+                                >Setup->Security->Remote Site Setting</a
+                            >.</span
+                        >
+                        <div style="clear: both;"></div>
+                    </div>
+                    <apex:outputLabel
+                        for="url"
+                        value="Base Url : "
+                        style="
+                            float: left;
+                            line-height: 29px;
+                            margin-right: 10px;
+                        "
+                    />
+                    <apex:inputText
+                        value="{!sourceUrl}"
+                        styleClass="url"
+                        style="float: left;"
+                    />
+                    <apex:actionStatus id="savePredictions">
+                        <apex:facet name="start">
+                            <apex:image
+                                width="20"
+                                height="20"
+                                url="{!URLFOR($Resource.Brackets , 'images/loading.gif') }"
+                            />
+                        </apex:facet>
+                        <apex:facet name="stop">
+                            <apex:commandButton
+                                action="{!importTournament}"
+                                status="savePredictions"
+                                value="Import Tournament"
+                                rerender="List"
+                            />
+                        </apex:facet>
+                    </apex:actionStatus>
+                </apex:outputPanel>
+                <apex:outputPanel layout="block">
+                    <apex:outputPanel
+                        layout="inline"
+                        rendered="{!statusText != '' && statusText != null }"
+                        id="message"
+                        >{!statusText}</apex:outputPanel
+                    >
+                </apex:outputPanel>
+            </apex:pageBlockSection>
+            <apex:pageBlockSection
+                title="Tournaments"
+                columns="1"
+                collapsible="false"
+            >
+                <apex:pageBlockSectionItem>
+                    <apex:outputPanel Id="List">
+                        <apex:outputPanel layout="none" id="xmlMessage">
+                            <apex:outputPanel
+                                layout="block"
+                                styleClass="attention"
+                                rendered="{!LEN(xmlMessage) > 0}"
+                                >{!xmlMessage}</apex:outputPanel
+                            >
+                        </apex:outputPanel>
+                        <table class="tournamentlist" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Version</th>
+                                    <th>Created By</th>
+                                    <th>Created Date</th>
+                                    <th>Last Modify By</th>
+                                    <th>Last Modify Date</th>
+                                    <th width="70px;">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <apex:repeat value="{!tList}" var="t">
+                                    <tr>
+                                        <td>
+                                            <a href="/{!t.Id}">
+                                                <apex:outputText
+                                                    value="{!t.Name}"
+                                                />
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <apex:outputText
+                                                value="{!t.Version__c}"
+                                            />
+                                        </td>
+                                        <td>
+                                            <apex:outputText
+                                                value="{!t.CreatedBy.Name}"
+                                            />
+                                        </td>
+                                        <td>
+                                            <apex:outputText
+                                                value="{!t.CreatedDate}"
+                                            />
+                                        </td>
+                                        <td>
+                                            <apex:outputText
+                                                value="{!t.LastModifiedBy.Name}"
+                                            />
+                                        </td>
+                                        <td>
+                                            <apex:outputText
+                                                value="{!t.LastModifiedDate}"
+                                            />
+                                        </td>
+                                        <td style="width: 100px;">
+                                            <apex:actionStatus id="procesXML">
+                                                <apex:facet name="start">
+                                                    <apex:image
+                                                        width="20"
+                                                        height="20"
+                                                        url="{!URLFOR($Resource.Brackets , '/images/loading.gif') }"
+                                                    />
+                                                </apex:facet>
+                                                <apex:facet name="stop">
+                                                    <apex:commandButton
+                                                        action="{!doManualUpdate}"
+                                                        status="procesXML"
+                                                        value="Update"
+                                                        rerender="List"
+                                                        style="float: left;"
+                                                    >
+                                                        <apex:param
+                                                            name="tId"
+                                                            value="{!t.Id}"
+                                                        />
+                                                    </apex:commandButton>
+                                                </apex:facet>
+                                            </apex:actionStatus>
+                                        </td>
+                                    </tr>
+                                </apex:repeat>
+                            </tbody>
+                        </table>
+                    </apex:outputPanel>
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+        </apex:form>
+    </apex:pageBlock>
+    <script type="text/javascript">
+        BracketsImportTournament.init();
+    </script>
+</apex:page>

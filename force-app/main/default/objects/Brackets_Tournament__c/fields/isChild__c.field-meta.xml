@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>isChild__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Enabled if a tournament is imported from a URL</description>
+    <externalId>false</externalId>
+    <label>isChild</label>
+    <type>Checkbox</type>
+</CustomField>

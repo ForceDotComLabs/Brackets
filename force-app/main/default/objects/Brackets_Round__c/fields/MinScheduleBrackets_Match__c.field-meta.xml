@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>MinScheduleBrackets_Match__c</fullName>
+    <externalId>false</externalId>
+    <label>MinScheduleMatch</label>
+    <summarizedField>Brackets_Match__c.Schedule__c</summarizedField>
+    <summaryForeignKey>Brackets_Match__c.Brackets_Round__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <type>Summary</type>
+</CustomField>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PositiveScores</fullName>
+    <active>true</active>
+    <description>Scores must be a positive numbers</description>
+    <errorConditionFormula
+    >HomeScore__c &lt; 0 ||  VisitorScore__c &lt; 0</errorConditionFormula>
+    <errorMessage>The score must be a positive number</errorMessage>
+</ValidationRule>

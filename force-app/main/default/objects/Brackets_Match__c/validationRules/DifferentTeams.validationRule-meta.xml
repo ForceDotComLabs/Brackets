@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DifferentTeams</fullName>
+    <active>true</active>
+    <description
+    >The home and visitor teams must be different teams</description>
+    <errorConditionFormula
+    >AND(AND(NOT( ISBLANK( VisitorBrackets_Team__c ) ),NOT( ISBLANK( HomeBrackets_Team__c ) )),HomeBrackets_Team__c = VisitorBrackets_Team__c)</errorConditionFormula>
+    <errorMessage>Team 1 and Team 2 must be different</errorMessage>
+</ValidationRule>

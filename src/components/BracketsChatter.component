@@ -1,4 +1,0 @@
-<apex:component >
-	<apex:attribute type="id" name="parentId" id="parentId" required="true" description="The entityyou want to render Chatter for." />
-	<chatter:feedWithFollowers entityId="{!parentId}" showHeader="false" />
-</apex:component>

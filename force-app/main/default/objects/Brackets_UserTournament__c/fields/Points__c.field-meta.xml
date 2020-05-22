@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Points__c</fullName>
+    <externalId>false</externalId>
+    <label>Points</label>
+    <summarizedField>Brackets_UserMatchPred__c.Points__c</summarizedField>
+    <summaryForeignKey
+    >Brackets_UserMatchPred__c.Brackets_UserTournament__c</summaryForeignKey>
+    <summaryOperation>sum</summaryOperation>
+    <type>Summary</type>
+</CustomField>

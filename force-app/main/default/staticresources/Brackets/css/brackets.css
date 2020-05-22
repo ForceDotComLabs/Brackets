@@ -1,0 +1,322 @@
+/* -------------------------------------------------------------------------- */
+/*           TOURNAMENT                                                       */
+/* -------------------------------------------------------------------------- */
+
+.tournament .round {
+	width    : 155px;
+	float    : left;
+	position : relative;
+	padding  : 0;
+}
+
+.tournament .spacer {
+	clear: both;
+}
+
+.tournament .match {
+	border-bottom : 1px solid black;
+	border-top    : 1px solid black;
+	border-right  : 1px solid black;
+	padding       : 0;
+}
+
+.tournament .team {
+	background  : transparent url("../images/bck_blue.png") no-repeat scroll left top;
+	overflow    : hidden;
+	color       : white;
+	text-align  : left;
+	padding     : 0 10px;
+	height      : 20px;
+	font-size   : 0.7em;
+	font-family : sans-serif;
+	text-align  : left;
+	width       : 135px;
+	line-height : 20px;
+}
+
+.tournament .team-empty, .tournament .champion-empty , .tournament .superchampion-empty {
+	background : transparent url("../images/bck_grey.png") no-repeat scroll left top;
+	text-align : center;
+}
+
+.tournament .highlight {
+	background-position: 0 -20px;
+}
+
+.tournament .success {
+	border      : 0 none;
+	font-weight : normal;
+	padding-top : 0;
+	margin-top  : 0;
+}
+
+.tournament .failure {
+}
+
+.tournament .home {
+	position : relative;
+	top      : -7px;
+}
+
+.tournament .visitor {
+	position : relative;
+	bottom   : -7px;
+}
+
+.tournament .inner {
+	left     : 5px;
+}
+
+.tournament .team  .state{
+	float        : left;
+	margin-right : 5px;
+	position     : relative;
+	top          : 5px;
+	width        : 9px;
+	height       : 9px;
+}
+
+.tournament .champion {
+	position    : relative;
+	left        : 50%;
+	text-align  : center;
+}
+
+.tournament .team span.name {
+	width    : 90px;
+	overflow : hidden;
+	height   : 20px;
+	cursor   : pointer;
+	float    : left;
+}
+
+.tournament .team span.score {
+	color        : black;
+	text-align   : right;
+	font-size    : 1em;
+	padding-left : 5px;
+	font-weight  : bold;
+	float        : left;
+}
+
+.tournament .prediction{
+	font-style : italic;
+}
+
+ .tournament .hidden {
+	visibility : hidden;
+ }
+ 
+ .tournament .right .match {
+	border-right : none;
+	border-left  : 1px solid black;
+ }
+
+ .tournament .right .team {
+	right : -10px;
+ }
+ 
+.tournament .champion-left {
+	position : relative;
+	text-align: center;
+	top: 80px;
+	right: 100px;
+}
+
+.tournament .champion-right {
+	position : relative;
+	text-align: center;
+	top: 100px;
+	left: 110px;
+}
+
+.tournament .superchampion {
+	position : relative;
+	text-align: center;
+	left: 5px;
+}
+
+.tournament .championship{
+	position : relative;
+	z-index  : 1; 		
+}
+
+.tournament .championship .round {
+	border-bottom:1px solid black;
+	height:130px;
+}
+
+.tournament .championship .round .hline {
+	border-right:1px solid black;
+	height:100%;
+	left:0;
+	position:absolute;
+	top:0;
+	width:50%;
+}
+
+.tournament .championship .round .match {
+	border: none;
+}
+
+.missing-predictions {
+	clear: both;
+	position: relative;
+	top: 30px;
+	font-family: sans-serif;
+}
+
+/* -------------------------------------------------------------------------- */
+/* 								BracketsAdmin								  */
+/* -------------------------------------------------------------------------- */
+
+.h1Title {
+	font-size: 14px;
+}
+
+/* -------------------------------------------------------------------------- */
+/*								BracketsMatchesPrediction					  */
+/* -------------------------------------------------------------------------- */
+
+#theTable { 
+	width : 100%; 
+}
+/* -------------------------------------------------------------------------- */
+/*								BracketsTournamentLayoutButtons				  */
+/* -------------------------------------------------------------------------- */
+
+.attention, .success{
+	margin-top:10px;
+	background:none repeat scroll 0 0 #FFFFCC;
+	font-weight:bold;
+	padding:10px 10px 10px 10px;
+	text-align : center;
+}
+
+.success { 
+	border:1px solid #006400;
+	color:#006400; 
+}
+
+.attention{ 
+	border:1px solid #E56363; 
+}
+
+div.success b{ 
+	display:block;
+	font-size:12px;
+	margin:10px auto;
+	width:100%; 
+}
+
+div.success em{ 
+	display:block;
+	font-size:12px;
+	margin:10px auto;
+	width:100%; 
+}
+
+.statusStart{
+	margin:10px auto;
+	padding:1px 20px;
+	width:35px;
+	height:35px;
+	display: block;
+}
+
+.statusStop{
+	display:none;
+}
+
+#loader { 
+	display:none;
+	background:url("../images/loading.gif") no-repeat scroll 50% 50% #F8F8F8;
+	height:55%;
+	position:absolute;
+	width:96%; 
+}
+
+        .errorBlock {
+            margin: 0pt -150px; 
+            padding: 10px; 
+            border: 2px solid #B7191B;  
+            background: none repeat scroll 0pt 0pt #FFFFCC; 
+            color: #B7191B; 
+            font-weight: bold;
+            display : none;
+            position : absolute;
+            top : 10px;
+            width: 300px;
+            left : 50%;
+            text-align: center;
+        }
+    
+
+	
+	.diamond {
+	    border-color: transparent #000000 transparent transparent;
+	    border-style: solid;
+	    border-width: 5px 5px 5px 0;
+	    cursor: help;
+	    height: 0;
+	    margin: -5px 0;
+	    position: absolute;
+	    right: 0;
+	    top: 50%;
+	    width: 0;
+	}
+	
+	.diamond.rightFont {
+		border-color: transparent transparent transparent #000000;
+	    border-width: 5px 0 5px 5px;
+	    right: -6px;
+	    z-index: 2000;
+    }
+    
+    .right .diamond {
+    	left: -6px;
+    }
+    .right .diamond.leftFont{
+    	border-color: transparent transparent transparent #000000;
+	    border-width: 5px 0 5px 5px;
+	    left: 0px;
+	    z-index: 2000;
+    }
+    
+    .diamontDivConteiner{ display:block;width:10px; height:10px;position:absolute;right:0;top: 50%; }
+    
+    .MatchDetail { font-family : sans-serif; font-size:11px; }
+
+   	.winner{
+   		background: none repeat scroll 0 0 #FFFFCC;
+	    border: 1px solid #339900;
+	    display: block;
+	    font-size: 12px;
+	    font-weight: bold;
+	    margin: 10px 0;
+	    padding: 5px;
+	    text-align: center;
+	    width: 190px;
+   	}
+   	
+   	.teamDescriptionPage {
+   		background: url("../images/arrowOut10x10.png") no-repeat scroll 0 0 transparent;
+   		display: block;
+	    float: left;
+	    height: 10px;
+	    margin-top: 5px;
+	    width: 20px;
+   	}
+   
+
+	A:link.teamDescriptionPage  {text-decoration: none}
+	A:visited.teamDescriptionPage  {text-decoration: none}
+	A:active.teamDescriptionPage  {text-decoration: none}
+	A:hover.teamDescriptionPage {text-decoration: none}   	
+   	
+   	
+   	.team i { font-style:normal;float:left;  }
+   	
+   	.matchDetailHTML{ display : none; }
+   	
+

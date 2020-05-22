@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brackets_Match__c</fullName>
+    <externalId>false</externalId>
+    <label>Match</label>
+    <referenceTo>Brackets_Match__c</referenceTo>
+    <relationshipLabel>UserMatchPredictions</relationshipLabel>
+    <relationshipName>UserMatchPredictions</relationshipName>
+    <type>Lookup</type>
+</CustomField>
