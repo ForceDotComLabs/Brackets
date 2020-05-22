@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TournamentNotUpdatable</fullName>
+    <active>true</active>
+    <errorConditionFormula
+    >NOT(ISNEW()) &amp;&amp; ISCHANGED( Brackets_Tournament__c )</errorConditionFormula>
+    <errorDisplayField>Brackets_Tournament__c</errorDisplayField>
+    <errorMessage>This field can&apos;t be updated.</errorMessage>
+</ValidationRule>

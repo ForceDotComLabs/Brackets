@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scores_with_no_winner</fullName>
+    <active>true</active>
+    <description
+    >Avoid to set scores when the Winner team is not established.</description>
+    <errorConditionFormula
+    >(HomeScore__c &gt; 0 || VisitorScore__c &gt; 0) &amp;&amp; WinnerBrackets_Team__c == null</errorConditionFormula>
+    <errorDisplayField>WinnerBrackets_Team__c</errorDisplayField>
+    <errorMessage>Select the Winner Team</errorMessage>
+</ValidationRule>

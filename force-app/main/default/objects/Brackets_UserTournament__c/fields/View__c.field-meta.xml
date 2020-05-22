@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>View__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( 
+$User.Id ==  User__r.Id ,
+HYPERLINK(&apos;/apex/BracketsPredictions?show=&apos; +  Brackets_Group__c  , &apos;Manage Predictions&apos;),  
+HYPERLINK(&apos;/apex/BracketsPredictions?view=&apos; +  Id , &apos;Show Predictions&apos;))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>View</label>
+    <required>false</required>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

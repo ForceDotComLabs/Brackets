@@ -1,0 +1,105 @@
+<apex:component>
+    <apex:attribute
+        name="team"
+        id="team"
+        type="Brackets_Team__c"
+        description="The Team (home or visitor)"
+        required="true"
+    />
+    <apex:attribute
+        name="predicted"
+        id="predicted"
+        type="Brackets_Team__c"
+        description="The Predicted Winner"
+        required="true"
+    />
+    <apex:attribute
+        name="className"
+        id="className"
+        type="String"
+        description="className field"
+        required="true"
+    />
+    <apex:attribute
+        name="score"
+        id="score"
+        type="Integer"
+        description="What did this team score?"
+        required="true"
+    />
+    <apex:attribute
+        name="played"
+        id="played"
+        type="Boolean"
+        description="Is there a winner present?"
+        required="true"
+    />
+    <div
+        name="{!IF(team.Id != null, team.Id, predicted.Id)}"
+        class="{!className}"
+    >
+        <div name="teamDescription" style="display: none;">
+            <apex:outputText
+                escape="false"
+                value="{!IF(NOT(ISNULL(team.Id)), team.Description__c, predicted.Description__c)}"
+            ></apex:outputText>
+        </div>
+        <!--  Home::Empty -->
+        <apex:outputpanel
+            layout="none"
+            rendered="{!IF(AND(team.Name == null, predicted.Name == null), 'true', 'false')}"
+        >
+            ?
+        </apex:outputpanel>
+        <!--  Home::Team -->
+        <apex:outputpanel
+            layout="none"
+            rendered="{!IF(AND(team.Name == null, predicted.Name == null), 'false', 'true')}"
+        >
+            <div class="state">
+                <apex:image
+                    width="9px"
+                    height="9px"
+                    style="#margin-bottom: 6px;"
+                    rendered="{!IF(OR(CONTAINS(className, 'success'), CONTAINS(className, 'failure')), 'true', 'false')}"
+                    value="{!IF(CONTAINS(className, 'success'),
+			                     URLFOR($Resource.Brackets ,'images/tick.png'),
+			                     IF(CONTAINS(className, 'failure'),
+			                       URLFOR($Resource.Brackets ,'images/cross.png'),
+			                       'none'))}"
+                />
+            </div>
+            <apex:outputpanel layout="inline" styleClass="name">
+                <apex:outputpanel layout="none" rendered="{!team.Id != null}">
+                    <i
+                        >{!IF(team.ShortName__c != null,
+                        team.ShortName__c,team.Name)}
+                    </i>
+                    <apex:outputLink
+                        rendered="{!team.Id != null}"
+                        value="/{!team.Id}"
+                        target="_blank"
+                        styleClass="teamDescriptionPage"
+                        >&nbsp;</apex:outputLink
+                    >
+                </apex:outputpanel>
+                <apex:outputpanel layout="none" rendered="{!team.Id == null}">
+                    <i
+                        >{!IF(predicted.ShortName__c != null,
+                        predicted.ShortName__c,predicted.Name)}
+                    </i>
+                    <apex:outputLink
+                        rendered="{!predicted.Id != null}"
+                        value="/{!predicted.Id}"
+                        target="_blank"
+                        styleClass="teamDescriptionPage"
+                        >&nbsp;</apex:outputLink
+                    >
+                </apex:outputpanel>
+            </apex:outputpanel>
+            <apex:outputpanel layout="inline" rendered="{!played}"
+                >{!score}</apex:outputpanel
+            >
+        </apex:outputpanel>
+    </div>
+</apex:component>

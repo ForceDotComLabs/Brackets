@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RankGreaterOrEqualThanZero</fullName>
+    <active>true</active>
+    <errorConditionFormula>Rank__c &lt; 0</errorConditionFormula>
+    <errorDisplayField>Rank__c</errorDisplayField>
+    <errorMessage>This value must be greater or equal than zero.</errorMessage>
+</ValidationRule>

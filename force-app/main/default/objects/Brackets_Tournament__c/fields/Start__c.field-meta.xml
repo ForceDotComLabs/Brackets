@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText
+    >Tournament start date, calculated with the date of the first match played</inlineHelpText>
+    <label>Start Date</label>
+    <summarizedField>Brackets_Round__c.Start__c</summarizedField>
+    <summaryForeignKey
+    >Brackets_Round__c.Brackets_Tournament__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <type>Summary</type>
+</CustomField>

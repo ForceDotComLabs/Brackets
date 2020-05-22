@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Scores_can_not_be_null</fullName>
+    <active>true</active>
+    <description
+    >If the Winner Team is establish, the scores can not be null or empty</description>
+    <errorConditionFormula>!ISNULL( WinnerBrackets_Team__c ) &amp;&amp; 
+(  !ISNUMBER( TEXT(VisitorScore__c) )  ||  !ISNUMBER( TEXT(HomeScore__c))  )</errorConditionFormula>
+    <errorDisplayField>WinnerBrackets_Team__c</errorDisplayField>
+    <errorMessage>Scores can not be null</errorMessage>
+</ValidationRule>

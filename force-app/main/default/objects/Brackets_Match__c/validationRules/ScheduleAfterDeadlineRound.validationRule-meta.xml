@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ScheduleAfterDeadlineRound</fullName>
+    <active>true</active>
+    <errorConditionFormula>And ( 
+!isBlank(Schedule__c),
+!isBlank(Brackets_Round__r.Deadline__c),
+Schedule__c &lt; Brackets_Round__r.Deadline__c
+)</errorConditionFormula>
+    <errorDisplayField>Schedule__c</errorDisplayField>
+    <errorMessage
+    >This date must be greater than the round&apos;s deadline.</errorMessage>
+</ValidationRule>

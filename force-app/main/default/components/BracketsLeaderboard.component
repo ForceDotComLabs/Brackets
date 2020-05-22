@@ -1,0 +1,46 @@
+<apex:component controller="BracketsLeaderboardController">
+    <apex:attribute
+        name="group"
+        id="group"
+        assignto="{!groupId}"
+        type="Id"
+        description="What group should we show for?"
+        required="false"
+    />
+    <apex:pageBlock title="Brackets Leaderboard ">
+        <p>Sorted by tournament, pool and then points; first 1000.</p>
+        <apex:pageBlockTable
+            value="{!leaders}"
+            var="current"
+            id="leaderboard"
+            rowClasses="odd,even"
+        >
+            <apex:column>
+                <apex:facet name="header">User</apex:facet>
+                <apex:outputText value="{!current.User__r.Name}" />
+            </apex:column>
+            <apex:column>
+                <apex:facet name="header">Tournament</apex:facet>
+                <apex:outputText
+                    value="{!current.Brackets_Tournament__r.Name}"
+                />
+            </apex:column>
+            <apex:column>
+                <apex:facet name="header">Pool</apex:facet>
+                <apex:outputText value="{!current.Brackets_Group__r.Name}" />
+            </apex:column>
+            <apex:column>
+                <apex:facet name="header">Points</apex:facet>
+                <apex:outputText value="{!current.Points__c}" />
+            </apex:column>
+            <apex:column>
+                <apex:facet name="header">Tiebreaker</apex:facet>
+                <apex:outputText value="{!current.Tiebreaker_Points__c}" />
+            </apex:column>
+            <apex:column>
+                <apex:facet name="header">View</apex:facet>
+                <apex:outputText escape="false" value="{!current.View__c}" />
+            </apex:column>
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:component>

@@ -1,0 +1,55 @@
+.import_section input.url {
+			margin:0 10px;
+			width:400px;
+			background : url("/img/alohaSkin/feeds/textfield_bg80opacity.png") repeat-x scroll center top #FFF;
+			font-size:1.2em;
+			min-height:1.3em;
+			border:1px solid #999999;
+			margin:0;
+			padding:4px;
+		}
+.tournamentlist {
+	border : 0;
+	background: transparent;
+} 
+
+.tournamentlist thead tr th { border-bottom : 1px solid #999999!important; }
+
+.tournamentlist th, .tournamentlist td {
+	line-height: 25px;
+}
+
+.message.infoM2 {
+	margin : 10px 0px ;
+}
+.message.infoM2 span {
+	float : left;
+}
+.statusStart {
+	background:url("/img/loading.gif") no-repeat scroll 0 0 transparent;
+	display:block;
+	float:left;
+	margin:4px;
+	width:18px;
+	overflow: hidden;
+	text-indent: -500%;
+}
+.statusStop { display:none; }
+
+div.attention{
+	background:none repeat scroll 0 0 #FFFFCC;
+	border:1px solid #E56363;
+	font-weight:bold;
+	padding:10px 10px 10px 10px;
+	text-align : center;
+}
+
+.import_loading {
+	text-indent	: -500%;
+	width   	: 32px;
+	height  	: 32px;
+	display 	: block;
+	overflow	: hidden;
+	background	: url("images/loading.gif") no-repeat scroll 50% 50% transparent;
+	float		: left;
+}

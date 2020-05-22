@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>End__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText
+    >End date of the round, calculated with the date of the last match.</inlineHelpText>
+    <label>End</label>
+    <summarizedField>Brackets_Match__c.Schedule__c</summarizedField>
+    <summaryForeignKey>Brackets_Match__c.Brackets_Round__c</summaryForeignKey>
+    <summaryOperation>max</summaryOperation>
+    <type>Summary</type>
+</CustomField>

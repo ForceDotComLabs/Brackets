@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText
+    >Round By Round lets users predict a single round at a time.  Full Tournament requires full prediction up front and cannot be changed.</inlineHelpText>
+    <label>Type</label>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Full Tournament</fullName>
+                <default>true</default>
+                <label>Full Tournament</label>
+            </value>
+            <value>
+                <fullName>Round By Round</fullName>
+                <default>false</default>
+                <label>Round By Round</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+</CustomField>

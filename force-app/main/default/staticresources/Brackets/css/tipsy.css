@@ -1,0 +1,26 @@
+.tipsy { 
+	padding: 5px; 
+	font-size: 12px; 
+	/* opacity: 0; filter: alpha(opacity=80);  
+	background-repeat: no-repeat;  
+	background-image: url(images/tipsy.gif); */
+	position: absolute;
+	z-index: 2001;
+}
+	.tipsy-inner { 
+		padding: 5px 8px 4px 8px; 
+		background-color: #D8ECF3; 
+		color: black; 
+		max-width: 200px;
+		text-align: left; 
+	}
+	
+	.tipsy-inner img {
+		max-width : 190px;
+	}
+  
+	.tipsy-inner { -moz-border-radius:3px; -webkit-border-radius:3px; }
+	.tipsy-north { background-position: top center; }
+	.tipsy-south { background-position: bottom center; }
+	.tipsy-east { background-position: right center; }
+	.tipsy-west { background-position: left center; }

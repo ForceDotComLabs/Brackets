@@ -1,6 +1,0 @@
-<apex:page >
-    
-
-    <c:BracketsPoolList />
-
-</apex:page>

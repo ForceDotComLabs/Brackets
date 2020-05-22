@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PositiveScorePoints</fullName>
+    <active>true</active>
+    <description>The score points must be a positive integer</description>
+    <errorConditionFormula>ScorePoints__c &lt; 0</errorConditionFormula>
+    <errorMessage>Score points must be positive</errorMessage>
+</ValidationRule>

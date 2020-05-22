@@ -1,0 +1,62 @@
+<apex:component>
+    <apex:attribute
+        name="isFinal"
+        id="isFinal"
+        type="Boolean"
+        required="true"
+        description="Is the current game final?"
+    />
+    <apex:attribute
+        name="isNfc"
+        id="isNfc"
+        type="Boolean"
+        required="true"
+        description="In this nfc?"
+    />
+    <apex:attribute
+        name="left"
+        id="left"
+        type="Integer"
+        required="true"
+        description="position"
+    />
+    <apex:attribute
+        name="top"
+        id="left"
+        type="Integer"
+        required="true"
+        description="position"
+    />
+    <apex:attribute
+        name="leftright"
+        id="left"
+        type="Integer"
+        required="true"
+        description="position"
+    />
+    <apex:attribute
+        name="font"
+        id="font"
+        type="String"
+        required="true"
+        description="position"
+    />
+    <apex:outputPanel layout="none" rendered="{!isFinal && !isNfc}">
+        <div class="diamond" style="left: {!left}px; top: {!top}%;"></div>
+        <div
+            class="diamond {!font}"
+            style="top: {!top}%; left: {!leftright}px;"
+        ></div>
+    </apex:outputPanel>
+    <apex:outputPanel layout="none" rendered="{!isFinal && isNfc}">
+        <div class="diamond" style="left: {!leftright}px; top: {!top}%;"></div>
+        <div
+            class="diamond {!font}"
+            style="top: {!top}%; left: {!left}px;"
+        ></div>
+    </apex:outputPanel>
+    <apex:outputPanel layout="none" rendered="{!!isFinal}">
+        <div class="diamond"></div>
+        <div class="diamond {!font}"></div>
+    </apex:outputPanel>
+</apex:component>

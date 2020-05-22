@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>NumOfMembers__c</fullName>
+    <description>Numbers of members joined to this group.</description>
+    <externalId>false</externalId>
+    <label>Members</label>
+    <summaryForeignKey
+    >Brackets_UserTournament__c.Brackets_Group__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <type>Summary</type>
+</CustomField>

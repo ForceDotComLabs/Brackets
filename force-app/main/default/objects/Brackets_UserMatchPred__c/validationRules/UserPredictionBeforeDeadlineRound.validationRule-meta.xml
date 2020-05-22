@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserPredictionBeforeDeadlineRound</fullName>
+    <active>true</active>
+    <description
+    >//deactivated as we need to update this object with points scored -- gives a false positive.</description>
+    <errorConditionFormula>IF( 
+and(
+ISPICKVAL(Brackets_UserTournament__r.Brackets_Group__r.Type__c, &apos;Round&apos;),
+ISCHANGED( PredictedWinnerBrackets_Team__c ) )
+,Brackets_Match__r.Brackets_Round__r.Deadline__c &lt; NOW(), false)</errorConditionFormula>
+    <errorMessage
+    >Prediction for this match can be done after deadline of its round.</errorMessage>
+</ValidationRule>

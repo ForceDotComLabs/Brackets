@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DeadlineBeforeSchedule</fullName>
+    <active>true</active>
+    <errorConditionFormula
+    >Deadline__c  &gt; MinScheduleBrackets_Match__c</errorConditionFormula>
+    <errorDisplayField>Deadline__c</errorDisplayField>
+    <errorMessage
+    >This date is greater than their matches&apos;s schedule.</errorMessage>
+</ValidationRule>

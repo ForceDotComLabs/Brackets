@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>Matches_Predictions</defaultLandingTab>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Brackets</label>
+    <tabs>About_Brackets</tabs>
+    <tabs>Matches_Predictions</tabs>
+    <tabs>View_Leaderboard</tabs>
+    <tabs>standard-Chatter</tabs>
+    <tabs>Brackets_Tournament__c</tabs>
+    <tabs>Brackets_Group__c</tabs>
+    <tabs>Brackets_Team__c</tabs>
+    <tabs>Import_Tournament</tabs>
+</CustomApplication>

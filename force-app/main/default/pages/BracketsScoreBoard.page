@@ -1,0 +1,3 @@
+<apex:page>
+    <c:BracketsLeaderboard />
+</apex:page>

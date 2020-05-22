@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PositveRoundNumber</fullName>
+    <active>true</active>
+    <description>The round number must be positive</description>
+    <errorConditionFormula>RoundNumber__c &lt; 0</errorConditionFormula>
+    <errorMessage>The round number must be positive</errorMessage>
+</ValidationRule>

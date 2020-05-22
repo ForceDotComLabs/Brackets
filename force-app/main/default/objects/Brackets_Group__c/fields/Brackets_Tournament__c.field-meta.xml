@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Brackets_Tournament__c</fullName>
+    <externalId>false</externalId>
+    <label>Tournament</label>
+    <referenceTo>Brackets_Tournament__c</referenceTo>
+    <relationshipName>Pools</relationshipName>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Lookup</type>
+</CustomField>

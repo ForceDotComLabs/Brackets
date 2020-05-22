@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>WinnerTeamSubset</fullName>
+    <active>true</active>
+    <description
+    >The winner team can be empty or must be the Team 1 or Team 2</description>
+    <errorConditionFormula
+    >WinnerBrackets_Team__c &lt;&gt; &quot;&quot; &amp;&amp;
+WinnerBrackets_Team__c &lt;&gt;  HomeBrackets_Team__c  &amp;&amp;
+WinnerBrackets_Team__c &lt;&gt;  VisitorBrackets_Team__c</errorConditionFormula>
+    <errorDisplayField>WinnerBrackets_Team__c</errorDisplayField>
+    <errorMessage>The winner must be the Team 1 or the Team 2</errorMessage>
+</ValidationRule>
