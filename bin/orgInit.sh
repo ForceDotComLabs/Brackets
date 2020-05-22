@@ -8,5 +8,6 @@ fi
 
 sfdx force:org:create -a recipes -s -f config/project-scratch-def.json -d $DURATION
 sfdx force:source:push
+sfdx force:user:permset:assign -n brackets
 sfdx force:org:open -p /lightning/page/home
 echo "Org is set up"
